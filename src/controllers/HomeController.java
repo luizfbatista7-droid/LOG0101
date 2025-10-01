@@ -27,7 +27,7 @@ import javafx.util.Callback;
 import utils.ConnectionUtil;
 
 /**
- * FXML Controller class
+ * FXML Controller
  *
  * @author oXCToo
  */
