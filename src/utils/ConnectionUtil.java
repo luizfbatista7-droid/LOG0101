@@ -17,6 +17,7 @@ public class ConnectionUtil {
 
             // URL do banco: jdbc:mysql://localhost:3306/nome_do_banco
             String url = "jdbc:mysql://localhost:3306/loginapp?useSSL=false&serverTimezone=UTC";
+            //String url = "jdbc:mysql://localhost:3306/loginapp";
             String user = "root";        // seu usuário MySQL
             String password = "senai123";        // sua senha MySQL
 
