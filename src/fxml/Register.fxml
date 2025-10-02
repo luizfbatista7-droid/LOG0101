@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.RegisterController"
+            prefWidth="400" prefHeight="450">
+
+    <VBox alignment="CENTER" spacing="15" layoutX="50" layoutY="30" prefWidth="300">
+
+        <!-- LOGO SENAI -->
+        <Label text="SENAI"
+               style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #E60000;"/>
+
+        <!-- Campos de cadastro -->
+        <TextField fx:id="txtFirstname" promptText="Nome"/>
+        <TextField fx:id="txtLastname" promptText="Sobrenome"/>
+        <TextField fx:id="txtEmail" promptText="Email"/>
+        <PasswordField fx:id="txtPassword" promptText="Senha"/>
+        <ComboBox fx:id="txtGender" promptText="Gênero"/>
+        <DatePicker fx:id="txtDOB" promptText="Data de Nascimento"/>
+
+        <!-- Botão -->
+        <Button fx:id="btnRegister" text="Cadastrar" onMouseClicked="#handleRegister" prefWidth="200"/>
+
+        <!-- Label de status -->
+        <Label fx:id="lblStatus" textFill="red"/>
+    </VBox>
+</AnchorPane>

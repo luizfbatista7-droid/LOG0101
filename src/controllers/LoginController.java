@@ -21,10 +21,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import utils.ConnectionUtil;
 
-/**
- *
- * @author oXCToo
- */
 public class LoginController implements Initializable {
 
     @FXML
@@ -39,13 +35,11 @@ public class LoginController implements Initializable {
     @FXML
     private Button btnSignin;
 
-    // JDBC
     private Connection con = null;
     private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;
 
     public LoginController() {
-        // Conecta ao banco usando sua classe utilitária
         con = ConnectionUtil.conDB();
     }
 
@@ -54,7 +48,6 @@ public class LoginController implements Initializable {
         if (event.getSource() == btnSignin) {
             if (logIn().equals("Success")) {
                 try {
-                    // troca de tela
                     Node node = (Node) event.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
                     stage.close();
@@ -72,6 +65,23 @@ public class LoginController implements Initializable {
         }
     }
 
+    // Método para abrir tela de cadastro
+    @FXML
+    private void openRegister() {
+        try {
+            Stage stage = (Stage) btnSignin.getScene().getWindow();
+            stage.close();
+
+            Scene scene = new Scene(
+                FXMLLoader.load(getClass().getResource("/fxml/Register.fxml"))
+            );
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         if (con == null) {
@@ -83,7 +93,6 @@ public class LoginController implements Initializable {
         }
     }
 
-    // login
     private String logIn() {
         String status = "Success";
         String email = txtUsername.getText();
